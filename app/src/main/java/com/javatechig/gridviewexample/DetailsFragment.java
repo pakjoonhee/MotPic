@@ -76,19 +76,19 @@ public class DetailsFragment extends Fragment {
         int width = metrics.widthPixels;
         float scaleFactor = metrics.density;
         float widthDp = width / scaleFactor;
-        boolean twoPane = widthDp >= 600;
+        boolean onePane = widthDp < 600;
 
-        if (bundle == null) {
-            return rootview;
-        } else if (bundle == getArguments()) {
+        if (onePane) {
+            Bundle bundle = getActivity().getIntent().getExtras();
             title = bundle.getString("title");
             image = bundle.getString("image");
             releaseDate = bundle.getString("releaseDate");
             rating = bundle.getString("rating");
             synopsis = bundle.getString("synopsis");
             id = bundle.getInt("id");
-        } else {
-            Bundle bundle = getActivity().getIntent().getExtras();
+        } else if (bundle == null) {
+            return rootview;
+        } else if (bundle == getArguments()) {
             title = bundle.getString("title");
             image = bundle.getString("image");
             releaseDate = bundle.getString("releaseDate");
