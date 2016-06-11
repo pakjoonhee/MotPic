@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Top Movies</string>
+    <string name="popular_movies">Most Popular</string>
+    <string name="highest_rated">Highest Rated</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_favorite_list">FavoriteList</string>
+    <string name="title">title</string>
+
+</resources>

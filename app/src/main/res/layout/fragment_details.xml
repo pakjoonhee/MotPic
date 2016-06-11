@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    tools:context=".DetailsFragment">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/title"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:paddingBottom="35dp"
+            android:gravity="center"
+            android:paddingTop="35dp"
+            android:background="@color/teal"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="35sp"/>
+
+        <ImageView
+            android:layout_width="170dp"
+            android:layout_height="220dp"
+            android:id="@+id/grid_item_image"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/title"
+            android:src="@drawable/maleficent_movie_poster_2"
+            android:paddingTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/movieRelease"
+            android:layout_toRightOf="@+id/grid_item_image"
+            android:layout_below="@+id/title"
+            android:paddingBottom="@dimen/padding_bottom_textview"
+            android:paddingLeft="@dimen/padding_left_textview"
+            android:paddingTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/movieRating"
+            android:layout_below="@+id/movieRelease"
+            android:layout_toRightOf="@+id/grid_item_image"
+            android:paddingBottom="@dimen/padding_bottom_textview"
+            android:paddingLeft="@dimen/padding_left_textview" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Add to Favorites"
+            android:id="@+id/buttonFavorite"
+            android:layout_below="@+id/movieRating"
+            android:layout_toRightOf="@+id/grid_item_image"
+            android:paddingBottom="@dimen/padding_bottom_textview"
+            android:layout_marginLeft="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/movieSynopsis"
+            android:layout_below="@+id/grid_item_image"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trailers"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/videosText"
+            android:layout_below="@+id/movieSynopsis"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingTop="20dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="20dp"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:text="Trailer 1"
+            android:id="@+id/button"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/videosText"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:text="Trailer 2"
+            android:id="@+id/button2"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/button"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reviews"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/reviews"
+            android:layout_below="@+id/button2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingTop="20dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reviews">
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp">
+                <ListView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/list"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/reviews" />
+            </android.support.v4.widget.NestedScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>
