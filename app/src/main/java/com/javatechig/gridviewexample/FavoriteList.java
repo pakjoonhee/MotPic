@@ -3,7 +3,9 @@ package com.javatechig.gridviewexample;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.View;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,6 +18,7 @@ public class FavoriteList extends ActionBarActivity {
     private GridViewAdapter mGridAdapter;
     private ArrayList<GridItem> mGridData;
     private GridItem item = new GridItem();
+    static final String error = "You have no favorites yet =(";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,27 +26,30 @@ public class FavoriteList extends ActionBarActivity {
         setContentView(R.layout.fragment_main);
 
         SharedPreferences settings = getSharedPreferences("favoritesArray", MODE_PRIVATE);
+        if (settings.getString("longString", null) == null) {
+            Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show();
+        } else {
+            String longString = settings.getString("longString", null).substring(1);
+            String[] split = longString.split("\\|");
+            ArrayList<String> list = new ArrayList<String>(Arrays.asList(split));
+            Set<String> set = new LinkedHashSet<>(list);
+            set.addAll(list);
+            list.clear();
+            list.addAll(set);
+            mGridData = new ArrayList<>();
+            for (int i = 0; i < list.size(); i += 2) {
+                item = new GridItem();
+                String title = list.get(i);
+                item.setTitle(title);
+                String image = list.get(i + 1);
+                item.setImage(image);
+                mGridData.add(item);
+            }
 
-        String longString = settings.getString("longString", null).substring(1);
-        String[] split = longString.split("\\|");
-        ArrayList<String> list = new ArrayList<String>(Arrays.asList(split));
-        Set<String> set = new LinkedHashSet<>(list);
-        set.addAll(list);
-        list.clear();
-        list.addAll(set);
-        mGridData = new ArrayList<>();
-        for (int i=0; i < list.size(); i+=2) {
-            item = new GridItem();
-            String title = list.get(i);
-            item.setTitle(title);
-            String image = list.get(i + 1);
-            item.setImage(image);
-            mGridData.add(item);
+            tGridView = (GridView) findViewById(R.id.gridView);
+            mGridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, mGridData);
+            tGridView.setAdapter(mGridAdapter);
+            mGridAdapter.setGridData(mGridData);
         }
-
-        tGridView = (GridView) findViewById(R.id.gridView);
-        mGridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, mGridData);
-        tGridView.setAdapter(mGridAdapter);
-        mGridAdapter.setGridData(mGridData);
     }
 }
