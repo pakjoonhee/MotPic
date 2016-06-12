@@ -87,6 +87,18 @@ public class DetailsFragment extends Fragment {
             synopsis = bundle.getString("synopsis");
             id = bundle.getInt("id");
         } else if (bundle == null) {
+            titleTextView = (TextView) rootview.findViewById(R.id.title);
+            titleTextView.setVisibility(View.INVISIBLE);
+            Button buttonOne = (Button)rootview.findViewById(R.id.button);
+            buttonOne.setVisibility(View.INVISIBLE);
+            Button buttonTwo = (Button)rootview.findViewById(R.id.button2);
+            buttonTwo.setVisibility(View.INVISIBLE);
+            Button buttonFavorite = (Button)rootview.findViewById(R.id.buttonFavorite);
+            buttonFavorite.setVisibility(View.INVISIBLE);
+            TextView reviews = (TextView) rootview.findViewById(R.id.reviews);
+            reviews.setVisibility(View.INVISIBLE);
+            TextView trailers = (TextView) rootview.findViewById(R.id.trailers);
+            trailers.setVisibility(View.INVISIBLE);
             return rootview;
         } else if (bundle == getArguments()) {
             title = bundle.getString("title");
