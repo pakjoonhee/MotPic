@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Html;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -44,7 +45,6 @@ public class DetailsFragment extends Fragment {
     private ArrayList<String> videoList = new ArrayList<>();
     private ArrayList<String> reviewsList = new ArrayList<>();
     private GridItem item = new GridItem();
-    ListView listView ;
     private ArrayList<String> returnedReviews;
     String title;
     String image;
@@ -95,8 +95,6 @@ public class DetailsFragment extends Fragment {
             buttonTwo.setVisibility(View.INVISIBLE);
             Button buttonFavorite = (Button)rootview.findViewById(R.id.buttonFavorite);
             buttonFavorite.setVisibility(View.INVISIBLE);
-            TextView reviews = (TextView) rootview.findViewById(R.id.reviews);
-            reviews.setVisibility(View.INVISIBLE);
             TextView trailers = (TextView) rootview.findViewById(R.id.trailers);
             trailers.setVisibility(View.INVISIBLE);
             return rootview;
@@ -116,16 +114,6 @@ public class DetailsFragment extends Fragment {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-
-        listView = (ListView) rootview.findViewById(R.id.list);
-
-        String[] reviewValues = new String[returnedReviews.size()];
-        reviewValues = returnedReviews.toArray(reviewValues);
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_list_item_1, android.R.id.text1, reviewValues);
-
-        listView.setAdapter(adapter);
 
 
         new AsyncVideoTask().execute("http://api.themoviedb.org/3/movie/" + id + "/videos" + "?api_key=a247f9509512beb8588090c3d377d6c9");
@@ -155,6 +143,19 @@ public class DetailsFragment extends Fragment {
                 SharedPreferences.Editor editor = settings.edit();
                 String longString = settings.getString("longString", "").concat("|" + title.concat("|" + image));
                 editor.putString("longString", longString);
+                editor.apply();
+            }
+        });
+
+        Button buttonReviews = (Button)rootview.findViewById(R.id.button3);
+        buttonFavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                SharedPreferences settings = getActivity().getSharedPreferences("reviewsArray", getActivity().MODE_PRIVATE);
+                SharedPreferences.Editor editor = settings.edit();
+                String joinedReviews = TextUtils.join("|", returnedReviews);
+                editor.putString("reviewsString", joinedReviews);
                 editor.apply();
             }
         });
