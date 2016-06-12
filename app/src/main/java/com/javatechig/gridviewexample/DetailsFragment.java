@@ -148,15 +148,13 @@ public class DetailsFragment extends Fragment {
         });
 
         Button buttonReviews = (Button)rootview.findViewById(R.id.button3);
-        buttonFavorite.setOnClickListener(new View.OnClickListener() {
+        buttonReviews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                SharedPreferences settings = getActivity().getSharedPreferences("reviewsArray", getActivity().MODE_PRIVATE);
-                SharedPreferences.Editor editor = settings.edit();
-                String joinedReviews = TextUtils.join("|", returnedReviews);
-                editor.putString("reviewsString", joinedReviews);
-                editor.apply();
+                Intent intent = new Intent(getActivity(), ReviewsList.class);
+                intent.putStringArrayListExtra("reviewsArray", returnedReviews);
+                startActivity(intent);
             }
         });
 
