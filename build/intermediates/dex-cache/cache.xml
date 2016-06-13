@@ -12,7 +12,7 @@
         jar="/Users/joonheepak/Desktop/FinishedProject-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         revision="21.1.2"
-        sha1="7eb51120794b4dbbdc80f83d5b650b6f79158f20">
+        sha1="1cb0fe25dbc1caebf6dd94bafdb1587e7cee32a7">
         <dex dex="/Users/joonheepak/Desktop/FinishedProject-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_68184e9e0a811ca6b29e849f3ff8342393f02b8c/classes.dex" />
     </item>
     <item
@@ -54,7 +54,7 @@
         jar="/Users/joonheepak/Desktop/FinishedProject-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         revision="21.1.2"
-        sha1="ee917b1f07d6d59ac2279a9b1754704e928b0c6c">
+        sha1="1dd15240d6e2690af4596b17002dd366981cac83">
         <dex dex="/Users/joonheepak/Desktop/FinishedProject-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_55148937e1327f712c4051690f23cd34169b6370/classes.dex" />
     </item>
 
