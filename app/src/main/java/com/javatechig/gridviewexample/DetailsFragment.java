@@ -31,9 +31,12 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import butterknife.BindView;
+import butterknife.BindViews;
+import butterknife.ButterKnife;
 
 
 /**
@@ -41,10 +44,10 @@ import butterknife.BindView;
  */
 public class DetailsFragment extends Fragment {
     @BindView(R.id.title) TextView titleTextView;
-    private TextView movieRelease;
-    private TextView movieRating;
-    private TextView movieSynopsis;
-    private ImageView imageView;
+    @BindView(R.id.movieRelease) TextView movieRelease;
+    @BindView(R.id.movieRating) TextView movieRating;
+    @BindView(R.id.movieSynopsis) TextView movieSynopsis;
+    @BindView(R.id.grid_item_image) ImageView imageView;
     private ArrayList<String> videoList = new ArrayList<>();
     private ArrayList<String> reviewsList = new ArrayList<>();
     private GridItem item = new GridItem();
@@ -172,23 +175,13 @@ public class DetailsFragment extends Fragment {
                 }
             }
         });
-
-        titleTextView = (TextView) rootview.findViewById(R.id.title);
+        ButterKnife.bind(this, rootview);
         titleTextView.setText(Html.fromHtml(title));
-
-        movieRelease = (TextView) rootview.findViewById(R.id.movieRelease);
         movieRelease.setText(releaseDate);
-
-        movieRating = (TextView) rootview.findViewById(R.id.movieRating);
         String divideTen = rating + "/10";
         movieRating.setText(divideTen);
-
-        movieSynopsis = (TextView) rootview.findViewById(R.id.movieSynopsis);
         movieSynopsis.setText(synopsis);
-
-        imageView = (ImageView) rootview.findViewById(R.id.grid_item_image);
         Picasso.with(getActivity()).load(image).into(imageView);
-
 
         return rootview;
 
