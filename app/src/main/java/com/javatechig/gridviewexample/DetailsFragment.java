@@ -33,12 +33,14 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
+import butterknife.BindView;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class DetailsFragment extends Fragment {
-    private TextView titleTextView;
+    @BindView(R.id.title) TextView titleTextView;
     private TextView movieRelease;
     private TextView movieRating;
     private TextView movieSynopsis;
