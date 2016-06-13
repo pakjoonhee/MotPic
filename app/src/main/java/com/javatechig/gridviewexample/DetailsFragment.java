@@ -156,10 +156,13 @@ public class DetailsFragment extends Fragment {
         buttonReviews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(getActivity(), ReviewsList.class);
-                intent.putStringArrayListExtra("reviewsArray", returnedReviews);
-                startActivity(intent);
+                if (returnedReviews.size() == 0){
+                    Toast.makeText(getActivity().getApplicationContext(), "Sorry this movie has no reviews =(", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent intent = new Intent(getActivity(), ReviewsList.class);
+                    intent.putStringArrayListExtra("reviewsArray", returnedReviews);
+                    startActivity(intent);
+                }
             }
         });
 

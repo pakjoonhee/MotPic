@@ -34,8 +34,8 @@
             android:textStyle="bold"/>
 
         <ImageView
-            android:layout_width="170dp"
-            android:layout_height="220dp"
+            android:layout_width="180dp"
+            android:layout_height="230dp"
             android:id="@+id/grid_item_image"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/title"

@@ -20,10 +20,11 @@ public class MainActivity extends ActionBarActivity {
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         int width = metrics.widthPixels;
+        int height = metrics.heightPixels;
         float scaleFactor = metrics.density;
         float widthDp = width / scaleFactor;
-        twoPane = widthDp >= 600;
-        if (widthDp < 600 && savedInstanceState == null) {
+        float heightDp = height / scaleFactor;
+        if (widthDp < 600 || heightDp < 600 && savedInstanceState == null) {
             setContentView(R.layout.activity_gridview);
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new MainFragment())
