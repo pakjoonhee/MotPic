@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -130,7 +131,11 @@ public class DetailsFragment extends Fragment {
         buttonTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(videoList.get(1))));
+                if (videoList.size() == 1) {
+                    Toast.makeText(getActivity().getApplicationContext(), "Sorry no second trailer =(", Toast.LENGTH_SHORT).show();
+                } else {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(videoList.get(1))));
+                }
             }
         });
 
@@ -227,6 +232,7 @@ public class DetailsFragment extends Fragment {
                     item = new GridItem();
                     JSONObject post = posts.optJSONObject(i);
                     String review = post.optString("content");
+                    String author = post.optString("author");
                     reviewsList.add(review);
                 }
             } catch (JSONException e) {
