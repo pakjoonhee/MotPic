@@ -24,7 +24,7 @@ public class MainActivity extends ActionBarActivity {
         float scaleFactor = metrics.density;
         float widthDp = width / scaleFactor;
         float heightDp = height / scaleFactor;
-        if (widthDp < 600 || heightDp < 600 && savedInstanceState == null) {
+        if (widthDp < 600 || heightDp < 500 && savedInstanceState == null) {
             setContentView(R.layout.activity_gridview);
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new MainFragment())

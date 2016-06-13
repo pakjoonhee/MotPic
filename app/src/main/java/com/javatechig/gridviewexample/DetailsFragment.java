@@ -75,11 +75,12 @@ public class DetailsFragment extends Fragment {
         DisplayMetrics metrics = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
         int width = metrics.widthPixels;
+        int height = metrics.heightPixels;
         float scaleFactor = metrics.density;
         float widthDp = width / scaleFactor;
-        boolean onePane = widthDp < 600;
+        float heightDp = height / scaleFactor;
 
-        if (onePane) {
+        if (widthDp < 600 || heightDp < 500) {
             Bundle bundle = getActivity().getIntent().getExtras();
             title = bundle.getString("title");
             image = bundle.getString("image");

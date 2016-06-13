@@ -82,12 +82,26 @@ public class MainFragment extends Fragment {
                 DisplayMetrics metrics = new DisplayMetrics();
                 getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
                 int width = metrics.widthPixels;
+                int height = metrics.heightPixels;
                 float scaleFactor = metrics.density;
                 float widthDp = width / scaleFactor;
-                boolean twoPane = widthDp >= 600; //Remember to put this in its own method
+                float heightDp = height / scaleFactor;
 
                 GridItem item = (GridItem) parent.getItemAtPosition(position);
-                if (twoPane) {
+                if (widthDp < 600 || heightDp < 500) {
+                    Intent intent = new Intent(getActivity(), DetailsActivity.class);
+
+                    intent.putExtra("title", item.getTitle()).
+                            putExtra("image", item.getImage()).
+                            putExtra("releaseDate", item.getReleaseDate()).
+                            putExtra("rating", item.getRating()).
+                            putExtra("id", item.getId()).
+                            putExtra("synopsis", item.getSynopsis());
+
+                    startActivity(intent);
+
+                } else {
+
                     Bundle args = new Bundle();
                     args.putString("title", item.getTitle());
                     args.putString("image", item.getImage());
@@ -102,18 +116,6 @@ public class MainFragment extends Fragment {
                     getActivity().getSupportFragmentManager().beginTransaction()
                             .replace(R.id.container3, fragment, "TAG")
                             .commit();
-
-                } else {
-                    Intent intent = new Intent(getActivity(), DetailsActivity.class);
-
-                    intent.putExtra("title", item.getTitle()).
-                            putExtra("image", item.getImage()).
-                            putExtra("releaseDate", item.getReleaseDate()).
-                            putExtra("rating", item.getRating()).
-                            putExtra("id", item.getId()).
-                            putExtra("synopsis", item.getSynopsis());
-
-                    startActivity(intent);
                 }
             }
         });
