@@ -18,6 +18,6 @@
         android:id="@+id/listView"
         android:layout_gravity="center_horizontal"
         android:background="@color/white"
-        android:dividerHeight="15sp"
-        android:paddingTop="20dp"/>
+        android:divider="@color/black"
+        android:dividerHeight="15sp" />
 </LinearLayout>

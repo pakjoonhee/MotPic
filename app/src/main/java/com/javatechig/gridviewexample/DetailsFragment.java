@@ -233,7 +233,7 @@ public class DetailsFragment extends Fragment {
                     JSONObject post = posts.optJSONObject(i);
                     String review = post.optString("content");
                     String author = post.optString("author");
-                    String reviewAuthor = review.concat("\n" + "\n" + "Review By: " + author);
+                    String reviewAuthor = "\n" + review.concat("\n" + "\n" + "Review By: " + author + "\n");
                     reviewsList.add(reviewAuthor);
                 }
             } catch (JSONException e) {
