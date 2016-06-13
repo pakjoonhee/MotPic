@@ -46,8 +46,9 @@
             android:id="@+id/movieRelease"
             android:layout_toRightOf="@+id/grid_item_image"
             android:layout_below="@+id/title"
+            android:textSize="30dp"
             android:paddingBottom="@dimen/padding_bottom_textview"
-            android:paddingLeft="@dimen/padding_left_textview"
+            android:paddingLeft="75dp"
             android:paddingTop="20dp"/>
 
         <TextView
@@ -57,19 +58,26 @@
             android:id="@+id/movieRating"
             android:layout_below="@+id/movieRelease"
             android:layout_toRightOf="@+id/grid_item_image"
-            android:paddingBottom="@dimen/padding_bottom_textview"
-            android:paddingLeft="@dimen/padding_left_textview" />
+            android:paddingBottom="10dp"
+            android:textSize="25dp"
+            android:paddingLeft="75dp"
+            android:paddingTop="20dp"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Add to Favorites"
+            android:textColor="@color/white"
+            android:background="@color/teal"
             android:id="@+id/buttonFavorite"
             android:layout_below="@+id/movieRating"
             android:layout_toRightOf="@+id/grid_item_image"
             android:paddingBottom="@dimen/padding_bottom_textview"
-            android:layout_marginLeft="30dp" />
+            android:paddingRight="20dp"
+            android:paddingLeft="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"/>
 
         <TextView
             android:layout_width="wrap_content"
