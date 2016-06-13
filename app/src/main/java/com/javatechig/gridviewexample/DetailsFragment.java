@@ -48,6 +48,12 @@ public class DetailsFragment extends Fragment {
     @BindView(R.id.movieRating) TextView movieRating;
     @BindView(R.id.movieSynopsis) TextView movieSynopsis;
     @BindView(R.id.grid_item_image) ImageView imageView;
+    @BindView(R.id.button) Button buttonOne;
+    @BindView(R.id.button2) Button buttonTwo;
+    @BindView(R.id.buttonFavorite) Button buttonFavorite;
+    @BindView(R.id.trailers) TextView trailers;
+    @BindView(R.id.summary) TextView summary;
+    @BindView(R.id.button3) Button buttonReviews;
     private ArrayList<String> videoList = new ArrayList<>();
     private ArrayList<String> reviewsList = new ArrayList<>();
     private GridItem item = new GridItem();
@@ -94,20 +100,14 @@ public class DetailsFragment extends Fragment {
             synopsis = bundle.getString("synopsis");
             id = bundle.getInt("id");
         } else if (bundle == null) {
-            titleTextView = (TextView) rootview.findViewById(R.id.title);
+            ButterKnife.bind(this, rootview);
             titleTextView.setVisibility(View.INVISIBLE);
-            Button buttonOne = (Button)rootview.findViewById(R.id.button);
-            buttonOne.setVisibility(View.INVISIBLE);
-            Button buttonTwo = (Button)rootview.findViewById(R.id.button2);
+            buttonOne.setVisibility(View.INVISIBLE);;
             buttonTwo.setVisibility(View.INVISIBLE);
-            Button buttonFavorite = (Button)rootview.findViewById(R.id.buttonFavorite);
             buttonFavorite.setVisibility(View.INVISIBLE);
-            TextView trailers = (TextView) rootview.findViewById(R.id.trailers);
             trailers.setVisibility(View.INVISIBLE);
-            TextView summary = (TextView) rootview.findViewById(R.id.summary);
             summary.setVisibility(View.INVISIBLE);
-            Button buttonThree = (Button)rootview.findViewById(R.id.button3);
-            buttonThree.setVisibility(View.INVISIBLE);
+            buttonReviews.setVisibility(View.INVISIBLE);
             return rootview;
         } else if (bundle == getArguments()) {
             title = bundle.getString("title");
@@ -129,7 +129,8 @@ public class DetailsFragment extends Fragment {
 
         new AsyncVideoTask().execute("http://api.themoviedb.org/3/movie/" + id + "/videos" + "?api_key=a247f9509512beb8588090c3d377d6c9");
 
-        Button buttonOne = (Button)rootview.findViewById(R.id.button);
+        ButterKnife.bind(this, rootview);
+
         buttonOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,7 +138,6 @@ public class DetailsFragment extends Fragment {
             }
         });
 
-        Button buttonTwo = (Button)rootview.findViewById(R.id.button2);
         buttonTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,7 +149,6 @@ public class DetailsFragment extends Fragment {
             }
         });
 
-        Button buttonFavorite = (Button)rootview.findViewById(R.id.buttonFavorite);
         buttonFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,7 +161,6 @@ public class DetailsFragment extends Fragment {
             }
         });
 
-        Button buttonReviews = (Button)rootview.findViewById(R.id.button3);
         buttonReviews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -175,7 +173,7 @@ public class DetailsFragment extends Fragment {
                 }
             }
         });
-        ButterKnife.bind(this, rootview);
+
         titleTextView.setText(Html.fromHtml(title));
         movieRelease.setText(releaseDate);
         String divideTen = rating + "/10";
