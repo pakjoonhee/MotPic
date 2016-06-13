@@ -99,6 +99,10 @@ public class DetailsFragment extends Fragment {
             buttonFavorite.setVisibility(View.INVISIBLE);
             TextView trailers = (TextView) rootview.findViewById(R.id.trailers);
             trailers.setVisibility(View.INVISIBLE);
+            TextView summary = (TextView) rootview.findViewById(R.id.summary);
+            summary.setVisibility(View.INVISIBLE);
+            Button buttonThree = (Button)rootview.findViewById(R.id.button3);
+            buttonThree.setVisibility(View.INVISIBLE);
             return rootview;
         } else if (bundle == getArguments()) {
             title = bundle.getString("title");
