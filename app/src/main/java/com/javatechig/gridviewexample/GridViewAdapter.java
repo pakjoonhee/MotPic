@@ -54,7 +54,10 @@ public class GridViewAdapter extends ArrayAdapter<GridItem> {
         GridItem item = mGridData.get(position);
         if (layoutResourceId == R.layout.grid_item_layout) {
             holder.titleTextView.setText(item.getTitle());
-            Picasso.with(mContext).load(item.getImage()).into(holder.imageView);
+            Picasso.with(mContext).load(item.getImage())
+                    .placeholder(R.drawable.user_placeholder_error)
+                    .error(R.drawable.user_placeholder)
+                    .into(holder.imageView);
         } //return later to put in an else statement
         return row;
     }

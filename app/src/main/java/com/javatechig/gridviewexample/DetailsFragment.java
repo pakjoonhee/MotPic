@@ -179,7 +179,11 @@ public class DetailsFragment extends Fragment {
         String divideTen = rating + "/10";
         movieRating.setText(divideTen);
         movieSynopsis.setText(synopsis);
-        Picasso.with(getActivity()).load(image).into(imageView);
+        Picasso.with(getActivity())
+                .load(image)
+                .placeholder(R.drawable.user_placeholder_error)
+                .error(R.drawable.user_placeholder)
+                .into(imageView);
 
         return rootview;
 
