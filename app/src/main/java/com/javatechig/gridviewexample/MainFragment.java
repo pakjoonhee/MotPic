@@ -185,7 +185,7 @@ public class MainFragment extends Fragment {
                 String title = post.optString("title");
                 String image = post.optString("poster_path");
                 String finalImage = "http://image.tmdb.org/t/p/w185" + image;
-                String releaseDate = post.optString("release_date");
+                String releaseDate = post.optString("release_date").substring(0,4);
                 String rating = post.optString("vote_average");
                 String synopsis = post.optString("overview");
                 int id = post.optInt("id");
