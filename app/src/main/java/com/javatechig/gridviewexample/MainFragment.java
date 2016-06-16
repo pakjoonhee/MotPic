@@ -28,6 +28,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 /**
@@ -51,16 +52,17 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Add this line in order for this fragment to handle menu events.
         setHasOptionsMenu(true);
+        if(savedInstanceState != null) {
+            mGridData = savedInstanceState.getParcelableArrayList("movies");
+        }
     }
 
 
     @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
-
-        savedInstanceState.putString("popularMovies", popularMoviesUrl);
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putParcelableArrayList("movies", mGridData);
+        super.onSaveInstanceState(outState);
     }
 
 
