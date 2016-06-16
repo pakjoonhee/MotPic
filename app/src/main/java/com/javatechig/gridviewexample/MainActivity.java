@@ -29,7 +29,13 @@ public class MainActivity extends ActionBarActivity {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new MainFragment())
                     .commit();
-        } else {
+        } else if (widthDp < 600 || heightDp < 500 && savedInstanceState != null) {
+            setContentView(R.layout.activity_gridview);
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, new MainFragment())
+                    .commit();
+        }
+        else {
             setContentView(R.layout.two_panel_tablet);
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container3, new DetailsFragment())

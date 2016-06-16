@@ -41,6 +41,7 @@ public class MainFragment extends Fragment {
     private ArrayList<GridItem> mGridData;
     private String popularMoviesUrl = "http://api.themoviedb.org/3/movie/popular?api_key=a247f9509512beb8588090c3d377d6c9";
     private String highestRatedUrl = "http://api.themoviedb.org/3/movie/top_rated?api_key=a247f9509512beb8588090c3d377d6c9";
+    private boolean menuIsInflated;
 
 
     public MainFragment() {
@@ -53,7 +54,10 @@ public class MainFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-        if(savedInstanceState != null) {
+        setRetainInstance(true);
+        if(savedInstanceState == null) {
+            mGridData = new ArrayList<>();
+        } else {
             mGridData = savedInstanceState.getParcelableArrayList("movies");
         }
     }
@@ -73,7 +77,8 @@ public class MainFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         mGridView = (GridView) rootView.findViewById(R.id.gridView);
-        mGridData = new ArrayList<>();
+
+
         mGridAdapter = new GridViewAdapter(getActivity(), R.layout.grid_item_layout, mGridData);
         mGridView.setAdapter(mGridAdapter);
 
@@ -209,8 +214,10 @@ public class MainFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-
-        inflater.inflate(R.menu.menu_main, menu);
+        if (!menuIsInflated) {
+            inflater.inflate(R.menu.menu_main, menu);
+            menuIsInflated = true;
+        }
     }
 
     @Override
