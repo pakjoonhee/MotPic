@@ -37,6 +37,7 @@ import java.util.concurrent.ExecutionException;
 import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
+import butterknife.OnItemClick;
 
 
 /**
@@ -130,7 +131,7 @@ public class DetailsFragment extends Fragment {
         new AsyncVideoTask().execute("http://api.themoviedb.org/3/movie/" + id + "/videos" + "?api_key=a247f9509512beb8588090c3d377d6c9");
 
         ButterKnife.bind(this, rootview);
-
+        
         buttonOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

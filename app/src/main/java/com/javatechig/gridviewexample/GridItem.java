@@ -1,6 +1,9 @@
 package com.javatechig.gridviewexample;
 
-public class GridItem {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class GridItem implements Parcelable {
     private String image;
     private String title;
     private String releaseDate;
@@ -12,6 +15,16 @@ public class GridItem {
 
     public GridItem() {
         super();
+    }
+
+    protected GridItem(Parcel in) {
+        image = in.readString();
+        title = in.readString();
+        releaseDate = in.readString();
+        rating = in.readString();
+        synopsis = in.readString();
+        id = in.readInt();
+        review = in.readString();
     }
 
     public String getImage() { return image; }
@@ -47,4 +60,32 @@ public class GridItem {
     public String getReview() { return review; }
 
     public void setReview(String review) { this.review = review; }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(image);
+        parcel.writeString(title);
+        parcel.writeString(releaseDate);
+        parcel.writeString(rating);
+        parcel.writeString(synopsis);
+        parcel.writeString(review);
+        parcel.writeInt(id);
+    }
+
+    public static final Creator<GridItem> CREATOR = new Creator<GridItem>() {
+        @Override
+        public GridItem createFromParcel(Parcel parcel) {
+            return new GridItem(parcel);
+        }
+
+        @Override
+        public GridItem[] newArray(int i) {
+            return new GridItem[i];
+        }
+    };
 }
