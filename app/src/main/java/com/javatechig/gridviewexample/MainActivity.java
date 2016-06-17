@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.PersistableBundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.DisplayMetrics;
 
@@ -37,12 +38,15 @@ public class MainActivity extends ActionBarActivity {
         }
         else {
             setContentView(R.layout.two_panel_tablet);
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container3, new DetailsFragment())
-                    .commit();
+            if (savedInstanceState == null) {
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.container3, new DetailsFragment())
+                        .commit();
+            }
+
         }
 
     }
-
+    
 }
 

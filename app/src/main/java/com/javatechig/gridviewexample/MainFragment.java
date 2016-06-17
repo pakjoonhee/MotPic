@@ -42,6 +42,7 @@ public class MainFragment extends Fragment {
     private String popularMoviesUrl = "http://api.themoviedb.org/3/movie/popular?api_key=a247f9509512beb8588090c3d377d6c9";
     private String highestRatedUrl = "http://api.themoviedb.org/3/movie/top_rated?api_key=a247f9509512beb8588090c3d377d6c9";
     private boolean menuIsInflated;
+    private Bundle args;
 
 
     public MainFragment() {
@@ -57,16 +58,15 @@ public class MainFragment extends Fragment {
         setRetainInstance(true);
         if(savedInstanceState == null) {
             mGridData = new ArrayList<>();
-        } else {
-            mGridData = savedInstanceState.getParcelableArrayList("movies");
         }
     }
 
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
-        outState.putParcelableArrayList("movies", mGridData);
-        super.onSaveInstanceState(outState);
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putParcelableArrayList("moviesGrid", mGridData);
+        savedInstanceState.putBundle("movieDetails", args);
+        super.onSaveInstanceState(savedInstanceState);
     }
 
 
@@ -74,11 +74,14 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        if (savedInstanceState != null) {
+            mGridData = savedInstanceState.getParcelableArrayList("moviesGrid");
+            args = savedInstanceState.getBundle("movieDetails");
+
+        }
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         mGridView = (GridView) rootView.findViewById(R.id.gridView);
-
-
         mGridAdapter = new GridViewAdapter(getActivity(), R.layout.grid_item_layout, mGridData);
         mGridView.setAdapter(mGridAdapter);
 
@@ -108,8 +111,7 @@ public class MainFragment extends Fragment {
                     startActivity(intent);
 
                 } else {
-
-                    Bundle args = new Bundle();
+                    args = new Bundle();
                     args.putString("title", item.getTitle());
                     args.putString("image", item.getImage());
                     args.putString("releaseDate", item.getReleaseDate());
