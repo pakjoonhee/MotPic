@@ -35,12 +35,13 @@ import java.util.Arrays;
  * A simple {@link Fragment} subclass.
  */
 public class MainFragment extends Fragment {
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = "Sorry not working";
     private GridView mGridView;
     private GridViewAdapter mGridAdapter;
     private ArrayList<GridItem> mGridData;
     final private String popularMoviesUrl = "http://api.themoviedb.org/3/movie/popular?api_key=a247f9509512beb8588090c3d377d6c9";
     final private String highestRatedUrl = "http://api.themoviedb.org/3/movie/top_rated?api_key=a247f9509512beb8588090c3d377d6c9";
+    private int localMessage;
     private Bundle args;
 
 
@@ -137,8 +138,7 @@ public class MainFragment extends Fragment {
                 }
 
             } catch (Exception e) {
-                Log.d("stuff", e.getLocalizedMessage());
-                Toast.makeText(getActivity(), "Failed to fetch data!", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, e.getLocalizedMessage());
             }
 
             return result;
