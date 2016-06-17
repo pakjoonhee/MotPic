@@ -56,29 +56,13 @@ public class MainFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         setRetainInstance(true);
-        if(savedInstanceState == null) {
-            mGridData = new ArrayList<>();
-        }
+        mGridData = new ArrayList<>();
+
     }
-
-
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-        savedInstanceState.putParcelableArrayList("moviesGrid", mGridData);
-        savedInstanceState.putBundle("movieDetails", args);
-        super.onSaveInstanceState(savedInstanceState);
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        if (savedInstanceState != null) {
-            mGridData = savedInstanceState.getParcelableArrayList("moviesGrid");
-            args = savedInstanceState.getBundle("movieDetails");
-
-        }
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         mGridView = (GridView) rootView.findViewById(R.id.gridView);
@@ -216,10 +200,9 @@ public class MainFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        if (!menuIsInflated) {
-            inflater.inflate(R.menu.menu_main, menu);
-            menuIsInflated = true;
-        }
+
+        inflater.inflate(R.menu.menu_main, menu);
+
     }
 
     @Override

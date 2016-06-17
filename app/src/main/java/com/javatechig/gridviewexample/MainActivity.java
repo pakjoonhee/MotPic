@@ -25,18 +25,15 @@ public class MainActivity extends ActionBarActivity {
         float scaleFactor = metrics.density;
         float widthDp = width / scaleFactor;
         float heightDp = height / scaleFactor;
-        if (widthDp < 600 || heightDp < 500 && savedInstanceState == null) {
+        if (widthDp < 600 || heightDp < 500) {
             setContentView(R.layout.activity_gridview);
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new MainFragment())
-                    .commit();
-        } else if (widthDp < 600 || heightDp < 500 && savedInstanceState != null) {
-            setContentView(R.layout.activity_gridview);
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new MainFragment())
-                    .commit();
+            if (savedInstanceState == null) {
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.container, new MainFragment())
+                        .commit();
+            }
         }
-        else {
+        else if (widthDp >= 600 || heightDp > 500){
             setContentView(R.layout.two_panel_tablet);
             if (savedInstanceState == null) {
                 getSupportFragmentManager().beginTransaction()
@@ -47,6 +44,6 @@ public class MainActivity extends ActionBarActivity {
         }
 
     }
-    
+
 }
 
