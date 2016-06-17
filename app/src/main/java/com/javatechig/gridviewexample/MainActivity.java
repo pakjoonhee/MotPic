@@ -29,7 +29,7 @@ public class MainActivity extends ActionBarActivity {
             setContentView(R.layout.activity_gridview);
             if (savedInstanceState == null) {
                 getSupportFragmentManager().beginTransaction()
-                        .add(R.id.container, new MainFragment())
+                        .replace(R.id.container, new MainFragment())
                         .commit();
             }
         }
@@ -37,7 +37,7 @@ public class MainActivity extends ActionBarActivity {
             setContentView(R.layout.two_panel_tablet);
             if (savedInstanceState == null) {
                 getSupportFragmentManager().beginTransaction()
-                        .add(R.id.container3, new DetailsFragment())
+                        .replace(R.id.container3, new DetailsFragment())
                         .commit();
             }
 

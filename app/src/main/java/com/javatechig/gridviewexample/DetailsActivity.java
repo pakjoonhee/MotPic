@@ -18,7 +18,7 @@ public class DetailsActivity extends ActionBarActivity {
         actionBar.hide();
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container2, new DetailsFragment())
+                    .replace(R.id.container2, new DetailsFragment())
                     .commit();
         }
 

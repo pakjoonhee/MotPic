@@ -39,9 +39,8 @@ public class MainFragment extends Fragment {
     private GridView mGridView;
     private GridViewAdapter mGridAdapter;
     private ArrayList<GridItem> mGridData;
-    private String popularMoviesUrl = "http://api.themoviedb.org/3/movie/popular?api_key=a247f9509512beb8588090c3d377d6c9";
-    private String highestRatedUrl = "http://api.themoviedb.org/3/movie/top_rated?api_key=a247f9509512beb8588090c3d377d6c9";
-    private boolean menuIsInflated;
+    final private String popularMoviesUrl = "http://api.themoviedb.org/3/movie/popular?api_key=a247f9509512beb8588090c3d377d6c9";
+    final private String highestRatedUrl = "http://api.themoviedb.org/3/movie/top_rated?api_key=a247f9509512beb8588090c3d377d6c9";
     private Bundle args;
 
 
@@ -138,7 +137,8 @@ public class MainFragment extends Fragment {
                 }
 
             } catch (Exception e) {
-                Log.d(TAG, e.getLocalizedMessage());
+                Log.d("stuff", e.getLocalizedMessage());
+                Toast.makeText(getActivity(), "Failed to fetch data!", Toast.LENGTH_SHORT).show();
             }
 
             return result;

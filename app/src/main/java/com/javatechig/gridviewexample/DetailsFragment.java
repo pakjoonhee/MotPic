@@ -49,8 +49,8 @@ public class DetailsFragment extends Fragment {
     @BindView(R.id.movieRating) TextView movieRating;
     @BindView(R.id.movieSynopsis) TextView movieSynopsis;
     @BindView(R.id.grid_item_image) ImageView imageView;
-    @BindView(R.id.button) Button buttonOne;
-    @BindView(R.id.button2) Button buttonTwo;
+    @BindView(R.id.button) Button buttonTrailerOne;
+    @BindView(R.id.button2) Button buttonTrailerTwo;
     @BindView(R.id.buttonFavorite) Button buttonFavorite;
     @BindView(R.id.trailers) TextView trailers;
     @BindView(R.id.summary) TextView summary;
@@ -59,6 +59,7 @@ public class DetailsFragment extends Fragment {
     private ArrayList<String> reviewsList = new ArrayList<>();
     private GridItem item = new GridItem();
     private ArrayList<String> returnedReviews;
+    private static final String BASE_MOVIE_URL = "http://api.themoviedb.org/3/movie/";
     String title;
     String image;
     String releaseDate;
@@ -104,8 +105,8 @@ public class DetailsFragment extends Fragment {
         } else if (bundle == null) {
             ButterKnife.bind(this, rootview);
             titleTextView.setVisibility(View.INVISIBLE);
-            buttonOne.setVisibility(View.INVISIBLE);;
-            buttonTwo.setVisibility(View.INVISIBLE);
+            buttonTrailerOne.setVisibility(View.INVISIBLE);;
+            buttonTrailerTwo.setVisibility(View.INVISIBLE);
             buttonFavorite.setVisibility(View.INVISIBLE);
             trailers.setVisibility(View.INVISIBLE);
             summary.setVisibility(View.INVISIBLE);
@@ -121,7 +122,7 @@ public class DetailsFragment extends Fragment {
         }
 
         try {
-            returnedReviews = new ArrayList<String>(new AsyncVideoTask().execute("http://api.themoviedb.org/3/movie/" + id + "/reviews" + "?api_key=a247f9509512beb8588090c3d377d6c9").get());
+            returnedReviews = new ArrayList<String>(new AsyncVideoTask().execute(BASE_MOVIE_URL + id + "/reviews" + "?api_key=a247f9509512beb8588090c3d377d6c9").get());
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -129,18 +130,18 @@ public class DetailsFragment extends Fragment {
         }
 
 
-        new AsyncVideoTask().execute("http://api.themoviedb.org/3/movie/" + id + "/videos" + "?api_key=a247f9509512beb8588090c3d377d6c9");
+        new AsyncVideoTask().execute(BASE_MOVIE_URL + id + "/videos" + "?api_key=a247f9509512beb8588090c3d377d6c9");
 
         ButterKnife.bind(this, rootview);
         
-        buttonOne.setOnClickListener(new View.OnClickListener() {
+        buttonTrailerOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(videoList.get(0))));
             }
         });
 
-        buttonTwo.setOnClickListener(new View.OnClickListener() {
+        buttonTrailerTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (videoList.size() == 1) {
