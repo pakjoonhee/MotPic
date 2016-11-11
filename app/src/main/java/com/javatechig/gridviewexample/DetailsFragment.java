@@ -69,13 +69,12 @@ public class DetailsFragment extends Fragment {
     Bundle bundle;
 
     public DetailsFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Add this line in order for this fragment to handle menu events.
         setHasOptionsMenu(true);
         setRetainInstance(true);
         bundle = getArguments();

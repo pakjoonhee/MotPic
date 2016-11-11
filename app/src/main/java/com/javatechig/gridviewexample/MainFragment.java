@@ -41,7 +41,6 @@ public class MainFragment extends Fragment {
     private ArrayList<GridItem> mGridData;
     final private String popularMoviesUrl = "http://api.themoviedb.org/3/movie/popular?api_key=a247f9509512beb8588090c3d377d6c9";
     final private String highestRatedUrl = "http://api.themoviedb.org/3/movie/top_rated?api_key=a247f9509512beb8588090c3d377d6c9";
-    private int localMessage;
     private Bundle args;
 
 

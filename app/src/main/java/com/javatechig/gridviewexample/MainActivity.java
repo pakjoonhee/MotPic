@@ -13,7 +13,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.DisplayMetrics;
 
 public class MainActivity extends ActionBarActivity {
-    public boolean twoPane;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
