@@ -18,8 +18,13 @@ public class GridItem  {
 
 
 
-    public GridItem() {
-        super();
+    public GridItem(String posterPath, String title, String releaseDate, String voteAverage, String overview, int id) {
+        this.posterPath = posterPath;
+        this.title = title;
+        this.releaseDate = releaseDate;
+        this.voteAverage = voteAverage;
+        this.overview = overview;
+        this.id = id;
     }
 
 //    protected GridItem(Parcel in) {
