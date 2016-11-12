@@ -1,6 +1,9 @@
 package com.javatechig.gridviewexample.data;
 
 import com.google.gson.annotations.SerializedName;
+import com.javatechig.gridviewexample.Movies;
+
+import java.util.List;
 
 /**
  * Created by joonheepak on 11/11/16.
@@ -11,7 +14,7 @@ public class MoviesResponse {
     @SerializedName("page")
     private int page;
     @SerializedName("results")
-    private List<Movie> results;
+    private List<Movies> results;
     @SerializedName("total_results")
     private int totalResults;
     @SerializedName("total_pages")
@@ -25,11 +28,11 @@ public class MoviesResponse {
         this.page = page;
     }
 
-    public List<Movie> getResults() {
+    public List<Movies> getResults() {
         return results;
     }
 
-    public void setResults(List<Movie> results) {
+    public void setResults(List<Movies> results) {
         this.results = results;
     }
 

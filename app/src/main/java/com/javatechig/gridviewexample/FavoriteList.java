@@ -14,8 +14,8 @@ import java.util.Set;
 public class FavoriteList extends ActionBarActivity {
     private GridView tGridView;
     private GridViewAdapter mGridAdapter;
-    private ArrayList<GridItem> mGridData;
-    private GridItem item = new GridItem();
+    private ArrayList<Movies> mGridData;
+    private Movies item = new Movies();
     static final String error = "You have no favorites yet =(";
 
     @Override
@@ -36,7 +36,7 @@ public class FavoriteList extends ActionBarActivity {
             list.addAll(set);
             mGridData = new ArrayList<>();
             for (int i = 0; i < list.size(); i += 2) {
-                item = new GridItem();
+                item = new Movies();
                 String title = list.get(i);
                 item.setTitle(title);
                 String image = list.get(i + 1);

@@ -8,16 +8,13 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Html;
-import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,13 +28,10 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import butterknife.BindView;
-import butterknife.BindViews;
 import butterknife.ButterKnife;
-import butterknife.OnItemClick;
 
 
 /**
@@ -57,7 +51,7 @@ public class DetailsFragment extends Fragment {
     @BindView(R.id.button3) Button buttonReviews;
     private ArrayList<String> videoList = new ArrayList<>();
     private ArrayList<String> reviewsList = new ArrayList<>();
-    private GridItem item = new GridItem();
+    private Movies item = new Movies();
     private ArrayList<String> returnedReviews;
     private static final String BASE_MOVIE_URL = "http://api.themoviedb.org/3/movie/";
     String title;
@@ -236,7 +230,7 @@ public class DetailsFragment extends Fragment {
                 JSONObject response = new JSONObject(result);
                 JSONArray posts = response.optJSONArray("results");
                 for (int i = 0; i < posts.length(); i++) {
-                    item = new GridItem();
+                    item = new Movies();
                     JSONObject post = posts.optJSONObject(i);
                     String review = post.optString("content");
                     String author = post.optString("author");

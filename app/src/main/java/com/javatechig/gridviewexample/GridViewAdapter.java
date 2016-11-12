@@ -13,20 +13,20 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-public class GridViewAdapter extends ArrayAdapter<GridItem> {
+public class GridViewAdapter extends ArrayAdapter<Movies> {
 
     private Context mContext;
     private int layoutResourceId;
-    private ArrayList<GridItem> mGridData = new ArrayList<GridItem>();
+    private ArrayList<Movies> mGridData = new ArrayList<Movies>();
 
-    public GridViewAdapter(Context mContext, int layoutResourceId, ArrayList<GridItem> mGridData) {
+    public GridViewAdapter(Context mContext, int layoutResourceId, ArrayList<Movies> mGridData) {
         super(mContext, layoutResourceId, mGridData);
         this.layoutResourceId = layoutResourceId;
         this.mContext = mContext;
         this.mGridData = mGridData;
     }
 
-    public void setGridData(ArrayList<GridItem> mGridData) {
+    public void setGridData(ArrayList<Movies> mGridData) {
         this.mGridData = mGridData;
         notifyDataSetChanged();
 
@@ -48,7 +48,7 @@ public class GridViewAdapter extends ArrayAdapter<GridItem> {
             holder = (ViewHolder) row.getTag();
         }
 
-        GridItem item = mGridData.get(position);
+        Movies item = mGridData.get(position);
         if (layoutResourceId == R.layout.grid_item_layout) {
             holder.titleTextView.setText(item.getTitle());
             Picasso.with(mContext).load(item.getPosterPath())

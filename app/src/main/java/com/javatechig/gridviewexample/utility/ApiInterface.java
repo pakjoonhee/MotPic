@@ -11,7 +11,7 @@ import retrofit2.http.Query;
  * Created by joonheepak on 11/11/16.
  */
 
-public class ApiInterface {
+public interface ApiInterface {
     @GET("movie/top_rated")
     Call<MoviesResponse> getTopRateMovies(@Query("api_key") String apiKey);
 

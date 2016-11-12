@@ -37,7 +37,7 @@ public class MainFragment extends Fragment {
     private static final String TAG = "Sorry not working";
     private GridView mGridView;
     private GridViewAdapter mGridAdapter;
-    private ArrayList<GridItem> mGridData;
+    private ArrayList<Movies> mGridData;
     final private String popularMoviesUrl = "http://api.themoviedb.org/3/movie/popular?api_key=a247f9509512beb8588090c3d377d6c9";
     final private String highestRatedUrl = "http://api.themoviedb.org/3/movie/top_rated?api_key=a247f9509512beb8588090c3d377d6c9";
     private Bundle args;
@@ -79,7 +79,7 @@ public class MainFragment extends Fragment {
                 float widthDp = width / scaleFactor;
                 float heightDp = height / scaleFactor;
 
-                GridItem item = (GridItem) parent.getItemAtPosition(position);
+                Movies item = (Movies) parent.getItemAtPosition(position);
                 if (widthDp < 600 || heightDp < 500) {
                     Intent intent = new Intent(getActivity(), DetailsActivity.class);
 
@@ -172,7 +172,7 @@ public class MainFragment extends Fragment {
         try {
             JSONObject response = new JSONObject(result);
             JSONArray posts = response.optJSONArray("results");
-            GridItem item;
+            Movies item;
             for (int i = 0; i < posts.length(); i++) {
                 JSONObject post = posts.optJSONObject(i);
                 String title = post.optString("title");
@@ -182,7 +182,7 @@ public class MainFragment extends Fragment {
                 String rating = post.optString("vote_average");
                 String synopsis = post.optString("overview");
                 int id = post.optInt("id");
-                item = new GridItem();
+                item = new Movies();
                 item.setTitle(title);
                 item.setPosterPath(finalImage);
                 item.setReleaseDate(releaseDate);

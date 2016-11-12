@@ -2,7 +2,7 @@ package com.javatechig.gridviewexample;
 
 import com.google.gson.annotations.SerializedName;
 
-public class GridItem  {
+public class Movies {
     @SerializedName("poster_path")
     private String posterPath;
     @SerializedName("title")
@@ -18,7 +18,7 @@ public class GridItem  {
 
 
 
-    public GridItem(String posterPath, String title, String releaseDate, String voteAverage, String overview, int id) {
+    public Movies(String posterPath, String title, String releaseDate, String voteAverage, String overview, int id) {
         this.posterPath = posterPath;
         this.title = title;
         this.releaseDate = releaseDate;
@@ -27,15 +27,10 @@ public class GridItem  {
         this.id = id;
     }
 
-//    protected GridItem(Parcel in) {
-//        posterPath = in.readString();
-//        title = in.readString();
-//        releaseDate = in.readString();
-//        voteAverage = in.readString();
-//        overview = in.readString();
-//        id = in.readInt();
-//        review = in.readString();
-//    }
+    public Movies() {
+
+    }
+
 
     public String getPosterPath() { return posterPath; }
 
@@ -67,32 +62,4 @@ public class GridItem  {
 
     public void setId(int id) { this.id = id; }
 
-
-//    @Override
-//    public int describeContents() {
-//        return 0;
-//    }
-//
-//    @Override
-//    public void writeToParcel(Parcel parcel, int i) {
-//        parcel.writeString(posterPath);
-//        parcel.writeString(title);
-//        parcel.writeString(releaseDate);
-//        parcel.writeString(voteAverage);
-//        parcel.writeString(overview);
-//        parcel.writeString(review);
-//        parcel.writeInt(id);
-//    }
-//
-//    public static final Creator<GridItem> CREATOR = new Creator<GridItem>() {
-//        @Override
-//        public GridItem createFromParcel(Parcel parcel) {
-//            return new GridItem(parcel);
-//        }
-//
-//        @Override
-//        public GridItem[] newArray(int i) {
-//            return new GridItem[i];
-//        }
-//    };
 }
