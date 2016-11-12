@@ -28,7 +28,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 /**
@@ -85,22 +84,22 @@ public class MainFragment extends Fragment {
                     Intent intent = new Intent(getActivity(), DetailsActivity.class);
 
                     intent.putExtra("title", item.getTitle()).
-                            putExtra("image", item.getImage()).
+                            putExtra("image", item.getPosterPath()).
                             putExtra("releaseDate", item.getReleaseDate()).
-                            putExtra("rating", item.getRating()).
+                            putExtra("rating", item.getVoteAverage()).
                             putExtra("id", item.getId()).
-                            putExtra("synopsis", item.getSynopsis());
+                            putExtra("synopsis", item.getOverview());
 
                     startActivity(intent);
 
                 } else {
                     args = new Bundle();
                     args.putString("title", item.getTitle());
-                    args.putString("image", item.getImage());
+                    args.putString("image", item.getPosterPath());
                     args.putString("releaseDate", item.getReleaseDate());
-                    args.putString("rating", item.getRating());
+                    args.putString("rating", item.getVoteAverage());
                     args.putInt("id", item.getId());
-                    args.putString("synopsis", item.getSynopsis());
+                    args.putString("synopsis", item.getOverview());
 
                     DetailsFragment fragment = new DetailsFragment();
                     fragment.setArguments(args);
@@ -185,10 +184,10 @@ public class MainFragment extends Fragment {
                 int id = post.optInt("id");
                 item = new GridItem();
                 item.setTitle(title);
-                item.setImage(finalImage);
+                item.setPosterPath(finalImage);
                 item.setReleaseDate(releaseDate);
-                item.setRating(rating);
-                item.setSynopsis(synopsis);
+                item.setVoteAverage(rating);
+                item.setOverview(synopsis);
                 item.setId(id);
                 mGridData.add(item);
             }

@@ -4,9 +4,6 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,7 +51,7 @@ public class GridViewAdapter extends ArrayAdapter<GridItem> {
         GridItem item = mGridData.get(position);
         if (layoutResourceId == R.layout.grid_item_layout) {
             holder.titleTextView.setText(item.getTitle());
-            Picasso.with(mContext).load(item.getImage())
+            Picasso.with(mContext).load(item.getPosterPath())
                     .placeholder(R.drawable.user_placeholder_error)
                     .error(R.drawable.user_placeholder)
                     .into(holder.imageView);

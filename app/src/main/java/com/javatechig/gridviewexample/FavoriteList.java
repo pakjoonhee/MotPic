@@ -3,13 +3,11 @@ package com.javatechig.gridviewexample;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.View;
 import android.widget.GridView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -42,7 +40,7 @@ public class FavoriteList extends ActionBarActivity {
                 String title = list.get(i);
                 item.setTitle(title);
                 String image = list.get(i + 1);
-                item.setImage(image);
+                item.setPosterPath(image);
                 mGridData.add(item);
             }
 
