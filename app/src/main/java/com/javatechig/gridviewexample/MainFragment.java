@@ -17,6 +17,10 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import com.javatechig.gridviewexample.data.MoviesResponse;
+import com.javatechig.gridviewexample.utility.ApiClient;
+import com.javatechig.gridviewexample.utility.ApiInterface;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,6 +32,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 /**
@@ -41,6 +50,8 @@ public class MainFragment extends Fragment {
     final private String popularMoviesUrl = "http://api.themoviedb.org/3/movie/popular?api_key=a247f9509512beb8588090c3d377d6c9";
     final private String highestRatedUrl = "http://api.themoviedb.org/3/movie/top_rated?api_key=a247f9509512beb8588090c3d377d6c9";
     private Bundle args;
+    private final static String API_KEY = "a247f9509512beb8588090c3d377d6c9";
+    List<Movies> movies;
 
 
     public MainFragment() {
@@ -66,6 +77,26 @@ public class MainFragment extends Fragment {
         mGridView = (GridView) rootView.findViewById(R.id.gridView);
         mGridAdapter = new GridViewAdapter(getActivity(), R.layout.grid_item_layout, mGridData);
         mGridView.setAdapter(mGridAdapter);
+
+
+
+        ApiInterface apiService =
+                ApiClient.getClient().create(ApiInterface.class);
+
+        Call<MoviesResponse> call = apiService.getTopRatedMovies(API_KEY);
+        call.enqueue(new Callback<MoviesResponse>() {
+            @Override
+            public void onResponse(Call<MoviesResponse> call, Response<MoviesResponse> response) {
+                movies = response.body().getResults();
+                Log.d(TAG, "Number of movies received: " + movies.size() + " " + movies.get(0).getTitle());
+            }
+
+            @Override
+            public void onFailure(Call<MoviesResponse>call, Throwable t) {
+                // Log error here since request failed
+                Log.e(TAG, t.toString());
+            }
+        });
 
 
 
@@ -211,6 +242,7 @@ public class MainFragment extends Fragment {
                 if (mGridData.size() >= 20) {
                     mGridData.clear();
                 }
+                mGridAdapter.setGridData(movies);
                 new AsyncHttpTask().execute(popularMoviesUrl);
                 break;
 

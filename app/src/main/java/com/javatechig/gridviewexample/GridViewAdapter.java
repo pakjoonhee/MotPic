@@ -1,6 +1,7 @@
 package com.javatechig.gridviewexample;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,16 +18,16 @@ public class GridViewAdapter extends ArrayAdapter<Movies> {
 
     private Context mContext;
     private int layoutResourceId;
-    private ArrayList<Movies> mGridData = new ArrayList<Movies>();
+    private List<Movies> mGridData = new ArrayList<Movies>();
 
-    public GridViewAdapter(Context mContext, int layoutResourceId, ArrayList<Movies> mGridData) {
+    public GridViewAdapter(Context mContext, int layoutResourceId, List<Movies> mGridData) {
         super(mContext, layoutResourceId, mGridData);
         this.layoutResourceId = layoutResourceId;
         this.mContext = mContext;
         this.mGridData = mGridData;
     }
 
-    public void setGridData(ArrayList<Movies> mGridData) {
+    public void setGridData(List<Movies> mGridData) {
         this.mGridData = mGridData;
         notifyDataSetChanged();
 
