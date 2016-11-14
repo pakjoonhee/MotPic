@@ -52,6 +52,7 @@ public class MainFragment extends Fragment {
     private Bundle args;
     private final static String API_KEY = "a247f9509512beb8588090c3d377d6c9";
     List<Movies> movies;
+    private int blah;
 
 
     public MainFragment() {
@@ -78,8 +79,6 @@ public class MainFragment extends Fragment {
         mGridAdapter = new GridViewAdapter(getActivity(), R.layout.grid_item_layout, mGridData);
         mGridView.setAdapter(mGridAdapter);
 
-
-
         ApiInterface apiService =
                 ApiClient.getClient().create(ApiInterface.class);
 
@@ -88,17 +87,17 @@ public class MainFragment extends Fragment {
             @Override
             public void onResponse(Call<MoviesResponse> call, Response<MoviesResponse> response) {
                 movies = response.body().getResults();
+                blah = movies.size();
                 Log.d(TAG, "Number of movies received: " + movies.size() + " " + movies.get(0).getTitle());
+                //For tomorrow
             }
 
             @Override
             public void onFailure(Call<MoviesResponse>call, Throwable t) {
                 // Log error here since request failed
-                Log.e(TAG, t.toString());
+                Log.e("Shit dont work", t.toString());
             }
         });
-
-
 
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -144,6 +143,7 @@ public class MainFragment extends Fragment {
 
         return rootView;
     }
+
 
     public class AsyncHttpTask extends AsyncTask<String, Void, Integer> {
         HttpURLConnection connection = null;
@@ -242,8 +242,11 @@ public class MainFragment extends Fragment {
                 if (mGridData.size() >= 20) {
                     mGridData.clear();
                 }
-                mGridAdapter.setGridData(movies);
-                new AsyncHttpTask().execute(popularMoviesUrl);
+                Movies item2 = new Movies();
+                item2.setTitle("blah");
+                mGridData.add(item2);
+                mGridAdapter.setGridData(mGridData);
+//                new AsyncHttpTask().execute(popularMoviesUrl);
                 break;
 
 
