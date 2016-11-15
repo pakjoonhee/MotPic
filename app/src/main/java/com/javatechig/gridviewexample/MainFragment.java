@@ -103,8 +103,6 @@ public class MainFragment extends Fragment {
             @Override
             public void onResponse(Call<MoviesResponse> call, Response<MoviesResponse> response) {
                 movies2 = response.body().getResults();
-                Log.d(TAG, "Number of movies received: " + movies.size() + " " + movies.get(0).getTitle());
-                //For tomorrow
             }
 
             @Override

@@ -48,10 +48,10 @@
             android:id="@+id/movieRelease"
             android:layout_toRightOf="@+id/grid_item_image"
             android:layout_below="@+id/title"
-            android:textSize="30dp"
+            android:textSize="25dp"
             android:textStyle="bold"
             android:paddingBottom="@dimen/padding_bottom_textview"
-            android:paddingLeft="77dp"
+            android:paddingLeft="50dp"
             android:paddingTop="20dp"/>
 
         <TextView

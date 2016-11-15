@@ -17,7 +17,6 @@ public class Movies {
     private int id;
 
 
-
     public Movies() {
 
     }

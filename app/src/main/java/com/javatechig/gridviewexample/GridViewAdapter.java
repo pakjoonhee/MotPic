@@ -52,7 +52,8 @@ public class GridViewAdapter extends ArrayAdapter<Movies> {
         Movies item = mGridData.get(position);
         if (layoutResourceId == R.layout.grid_item_layout) {
             holder.titleTextView.setText(item.getTitle());
-            Picasso.with(mContext).load(item.getPosterPath())
+            String posterImage = "http://image.tmdb.org/t/p/w185" + item.getPosterPath();
+            Picasso.with(mContext).load(posterImage)
                     .placeholder(R.drawable.user_placeholder_error)
                     .error(R.drawable.user_placeholder)
                     .into(holder.imageView);

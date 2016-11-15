@@ -54,6 +54,7 @@ public class DetailsFragment extends Fragment {
     private Movies item = new Movies();
     private ArrayList<String> returnedReviews;
     private static final String BASE_MOVIE_URL = "http://api.themoviedb.org/3/movie/";
+    private static final String BASE_IMAGE_URL = "http://image.tmdb.org/t/p/w185";
     String title;
     String image;
     String releaseDate;
@@ -90,7 +91,7 @@ public class DetailsFragment extends Fragment {
         if (widthDp < 600 || heightDp < 500) {
             Bundle bundle = getActivity().getIntent().getExtras();
             title = bundle.getString("title");
-            image = bundle.getString("image");
+            image = BASE_IMAGE_URL + bundle.getString("image");
             releaseDate = bundle.getString("releaseDate");
             rating = bundle.getString("rating");
             synopsis = bundle.getString("synopsis");
@@ -107,7 +108,7 @@ public class DetailsFragment extends Fragment {
             return rootview;
         } else if (bundle == getArguments()) {
             title = bundle.getString("title");
-            image = bundle.getString("image");
+            image = BASE_IMAGE_URL + bundle.getString("image");
             releaseDate = bundle.getString("releaseDate");
             rating = bundle.getString("rating");
             synopsis = bundle.getString("synopsis");
