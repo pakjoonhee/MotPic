@@ -48,8 +48,6 @@ public class MainFragment extends Fragment {
     private GridViewAdapter mGridAdapter;
     private ArrayList<Movies> mGridData;
     private ArrayList<Movies> blah3;
-    final private String popularMoviesUrl = "http://api.themoviedb.org/3/movie/popular?api_key=a247f9509512beb8588090c3d377d6c9";
-    final private String highestRatedUrl = "http://api.themoviedb.org/3/movie/top_rated?api_key=a247f9509512beb8588090c3d377d6c9";
     private Bundle args;
     private final static String API_KEY = "a247f9509512beb8588090c3d377d6c9";
     List<Movies> movies;
@@ -61,17 +59,16 @@ public class MainFragment extends Fragment {
         // Required empty public constructor
     }
 
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         setRetainInstance(true);
         mGridData = new ArrayList<>();
+        movies = new ArrayList<>();
+        movies2 = new ArrayList<>();
         blah3 = new ArrayList<>();
         blah4 = new ArrayList<>();
-
     }
 
     @Override
@@ -162,47 +159,6 @@ public class MainFragment extends Fragment {
         return rootView;
     }
 
-
-    public class AsyncHttpTask extends AsyncTask<String, Void, Integer> {
-        HttpURLConnection connection = null;
-
-        @Override
-        protected Integer doInBackground(String... params) {
-            Integer result = 0;
-            try {
-                URL url = new URL(params[0]);
-                connection = (HttpURLConnection) url.openConnection();
-                connection.connect();
-                InputStream stream = connection.getInputStream();
-
-                String response = streamToString(stream);
-                if (params[0] == popularMoviesUrl) {
-                    parseResult(response);
-                    result = 1;
-                } else if (params[0] == highestRatedUrl) {
-                    parseResult(response);
-                    result = 1;
-                }
-
-            } catch (Exception e) {
-                Log.d(TAG, e.getLocalizedMessage());
-            }
-
-            return result;
-        }
-
-        @Override
-        protected void onPostExecute(Integer result) {
-
-            if (result == 1) {
-                mGridAdapter.setGridData(mGridData);
-            } else {
-                Toast.makeText(getActivity(), "Failed to fetch data!", Toast.LENGTH_SHORT).show();
-            }
-
-        }
-    }
-
     static String streamToString(InputStream stream) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream));
         String line;
@@ -215,34 +171,6 @@ public class MainFragment extends Fragment {
             stream.close();
         }
         return result;
-    }
-
-    private void parseResult(String result) {
-        try {
-            JSONObject response = new JSONObject(result);
-            JSONArray posts = response.optJSONArray("results");
-            Movies item;
-            for (int i = 0; i < posts.length(); i++) {
-                JSONObject post = posts.optJSONObject(i);
-                String title = post.optString("title");
-                String image = post.optString("poster_path");
-                String finalImage = "http://image.tmdb.org/t/p/w185" + image;
-                String releaseDate = post.optString("release_date").substring(0,4);
-                String rating = post.optString("vote_average");
-                String synopsis = post.optString("overview");
-                int id = post.optInt("id");
-                item = new Movies();
-                item.setTitle(title);
-                item.setPosterPath(finalImage);
-                item.setReleaseDate(releaseDate);
-                item.setVoteAverage(rating);
-                item.setOverview(synopsis);
-                item.setId(id);
-                mGridData.add(item);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
