@@ -18,15 +18,6 @@ public class Movies {
 
 
 
-    public Movies(String posterPath, String title, String releaseDate, String voteAverage, String overview, int id) {
-        this.posterPath = posterPath;
-        this.title = title;
-        this.releaseDate = releaseDate;
-        this.voteAverage = voteAverage;
-        this.overview = overview;
-        this.id = id;
-    }
-
     public Movies() {
 
     }

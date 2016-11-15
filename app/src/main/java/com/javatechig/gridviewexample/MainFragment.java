@@ -47,12 +47,14 @@ public class MainFragment extends Fragment {
     private GridView mGridView;
     private GridViewAdapter mGridAdapter;
     private ArrayList<Movies> mGridData;
+    private ArrayList<Movies> blah3;
     final private String popularMoviesUrl = "http://api.themoviedb.org/3/movie/popular?api_key=a247f9509512beb8588090c3d377d6c9";
     final private String highestRatedUrl = "http://api.themoviedb.org/3/movie/top_rated?api_key=a247f9509512beb8588090c3d377d6c9";
     private Bundle args;
     private final static String API_KEY = "a247f9509512beb8588090c3d377d6c9";
     List<Movies> movies;
-    private int blah;
+    List<Movies> movies2;
+    ArrayList<Movies> blah4;
 
 
     public MainFragment() {
@@ -67,6 +69,8 @@ public class MainFragment extends Fragment {
         setHasOptionsMenu(true);
         setRetainInstance(true);
         mGridData = new ArrayList<>();
+        blah3 = new ArrayList<>();
+        blah4 = new ArrayList<>();
 
     }
 
@@ -82,12 +86,26 @@ public class MainFragment extends Fragment {
         ApiInterface apiService =
                 ApiClient.getClient().create(ApiInterface.class);
 
-        Call<MoviesResponse> call = apiService.getTopRatedMovies(API_KEY);
+        Call<MoviesResponse> call = apiService.getPopularMovies(API_KEY);
+        Call<MoviesResponse> call2 = apiService.getTopRatedMovies(API_KEY);
         call.enqueue(new Callback<MoviesResponse>() {
             @Override
             public void onResponse(Call<MoviesResponse> call, Response<MoviesResponse> response) {
                 movies = response.body().getResults();
-                blah = movies.size();
+                Log.d(TAG, "Number of movies received: " + movies.size() + " " + movies.get(0).getTitle());
+                //For tomorrow
+            }
+
+            @Override
+            public void onFailure(Call<MoviesResponse>call, Throwable t) {
+                // Log error here since request failed
+                Log.e("Shit dont work", t.toString());
+            }
+        });
+        call2.enqueue(new Callback<MoviesResponse>() {
+            @Override
+            public void onResponse(Call<MoviesResponse> call, Response<MoviesResponse> response) {
+                movies2 = response.body().getResults();
                 Log.d(TAG, "Number of movies received: " + movies.size() + " " + movies.get(0).getTitle());
                 //For tomorrow
             }
@@ -242,11 +260,11 @@ public class MainFragment extends Fragment {
                 if (mGridData.size() >= 20) {
                     mGridData.clear();
                 }
-                Movies item2 = new Movies();
-                item2.setTitle("blah");
-                mGridData.add(item2);
+
+                for (int i =0; i < movies.size(); i++) {
+                    mGridData.add(movies.get(i));
+                }
                 mGridAdapter.setGridData(mGridData);
-//                new AsyncHttpTask().execute(popularMoviesUrl);
                 break;
 
 
@@ -254,7 +272,13 @@ public class MainFragment extends Fragment {
                 if (mGridData.size() >= 20) {
                     mGridData.clear();
                 }
-                new AsyncHttpTask().execute(highestRatedUrl);
+
+                for (int i =0; i < movies2.size(); i++) {
+                    mGridData.add(movies2.get(i));
+                }
+                mGridAdapter.setGridData(mGridData);
+
+
                 break;
 
             case R.id.favorites:
