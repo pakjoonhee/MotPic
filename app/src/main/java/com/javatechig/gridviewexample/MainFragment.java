@@ -154,19 +154,7 @@ public class MainFragment extends Fragment {
         return rootView;
     }
 
-    static String streamToString(InputStream stream) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream));
-        String line;
-        String result = "";
-        while ((line = bufferedReader.readLine()) != null) {
-            result += line;
-        }
 
-        if (null != stream) {
-            stream.close();
-        }
-        return result;
-    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {

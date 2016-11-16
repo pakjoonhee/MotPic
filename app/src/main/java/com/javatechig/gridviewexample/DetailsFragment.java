@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.javatechig.gridviewexample.utility.AsyncUtility;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -197,7 +198,7 @@ public class DetailsFragment extends Fragment {
                 connection = (HttpURLConnection) url.openConnection();
                 connection.connect();
                 InputStream stream = connection.getInputStream();
-                String response = MainFragment.streamToString(stream);
+                String response = AsyncUtility.streamToString(stream);
                 if (params[0].contains("videos")) {
                     result = parseId(response);
                 } else {
