@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42a4ff4e-fec9-4c7e-af48-5e29443e7e54" name="Default" comment="" />
+    <list default="true" id="30c54676-08c1-4eec-8bc3-a54d2937caa4" name="Default" comment="" />
     <ignored path="TopMovies.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +27,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="988" />
     <option name="y" value="23" />
-    <option name="width" value="1447" />
+    <option name="width" value="1328" />
     <option name="height" value="957" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -137,17 +138,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="42a4ff4e-fec9-4c7e-af48-5e29443e7e54" name="Default" comment="" />
-      <created>1479795948910</created>
+      <changelist id="30c54676-08c1-4eec-8bc3-a54d2937caa4" name="Default" comment="" />
+      <created>1479884699414</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1479795948910</updated>
+      <updated>1479884699414</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1447" height="957" extended-state="0" />
-    <editor active="true" />
+    <frame x="988" y="23" width="1328" height="957" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
