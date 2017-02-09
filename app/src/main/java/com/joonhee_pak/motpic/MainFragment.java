@@ -1,8 +1,7 @@
-package com.javatechig.gridviewexample;
+package com.joonhee_pak.motpic;
 
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
@@ -15,11 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
 
-import com.javatechig.gridviewexample.data.MoviesResponse;
-import com.javatechig.gridviewexample.utility.ApiClient;
-import com.javatechig.gridviewexample.utility.ApiInterface;
+import com.joonhee_pak.motpic.data.MoviesResponse;
+import com.joonhee_pak.motpic.utility.ApiClient;
+import com.joonhee_pak.motpic.utility.ApiInterface;
 
 
 import java.util.ArrayList;

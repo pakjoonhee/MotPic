@@ -1,4 +1,4 @@
-package com.javatechig.gridviewexample;
+package com.joonhee_pak.motpic;
 
 
 

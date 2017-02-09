@@ -1,4 +1,4 @@
-package com.javatechig.gridviewexample;
+package com.joonhee_pak.motpic;
 
 
 import android.content.Intent;
@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.javatechig.gridviewexample.utility.AsyncUtility;
+import com.joonhee_pak.motpic.utility.AsyncUtility;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;

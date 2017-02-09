@@ -1,6 +1,6 @@
-package com.javatechig.gridviewexample.utility;
+package com.joonhee_pak.motpic.utility;
 
-import com.javatechig.gridviewexample.data.MoviesResponse;
+import com.joonhee_pak.motpic.data.MoviesResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

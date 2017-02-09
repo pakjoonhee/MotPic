@@ -1,4 +1,4 @@
-package com.javatechig.gridviewexample.utility;
+package com.joonhee_pak.motpic.utility;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,7 +1,7 @@
-package com.javatechig.gridviewexample.data;
+package com.joonhee_pak.motpic.data;
 
 import com.google.gson.annotations.SerializedName;
-import com.javatechig.gridviewexample.Movies;
+import com.joonhee_pak.motpic.Movies;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.javatechig.gridviewexample;
+package com.joonhee_pak.motpic;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,7 +7,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 /**

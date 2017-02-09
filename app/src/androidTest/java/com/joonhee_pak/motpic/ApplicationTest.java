@@ -1,4 +1,4 @@
-package com.javatechig.gridviewexample;
+package com.joonhee_pak.motpic;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

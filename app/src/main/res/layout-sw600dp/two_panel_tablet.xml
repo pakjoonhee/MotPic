@@ -9,7 +9,7 @@
     <fragment
         android:layout_height="wrap_content"
         android:layout_width="143dp"
-        class="com.javatechig.gridviewexample.MainFragment"
+        class="com.joonhee_pak.motpic.MainFragment"
         tools:layout="@layout/fragment_main"
         android:id="@+id/fragment1"/>
 
