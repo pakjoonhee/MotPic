@@ -11,15 +11,6 @@
         <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_7b3fb4e0afb1293f3cf5afe879ef0789b7e55ac0/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="74ca46e7da11e3d065eb64cdbe6568a7ed74c211">
-        <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/pre-dexed/release/com.jakewharton-butterknife-8.0.1_05937ab00051ee0c7eb5b310fd7f279eb91fb630.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.0.1/jars/classes.jar"
         jumboMode="true"
@@ -47,24 +38,6 @@
         <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.7_149ef5302d0a7d924e49a4e5e89af7102d591f51/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/Users/joonheepak/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.1.0/aa557d71ead91cbf26e0c316a0f593d168303309/converter-gson-2.1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
-        <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/pre-dexed/release/converter-gson-2.1.0_44b61a48199ea16c76fab21ff7e57cf3e4edc6a2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/joonheepak/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
-        <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/pre-dexed/release/gson-2.7_149ef5302d0a7d924e49a4e5e89af7102d591f51.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="/Users/joonheepak/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.0.1/345b89f45d02d8b09400b472fab7b7e38f4ede1f/butterknife-annotations-8.0.1.jar"
         jumboMode="true"
@@ -83,39 +56,12 @@
         <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_ccb9231e9b15313fe3b953fc60e1a14f54bb6e8a/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/pre-dexed/release/com.android.support-support-v4-23.4.0_7b3fb4e0afb1293f3cf5afe879ef0789b7e55ac0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/joonheepak/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.0.1/345b89f45d02d8b09400b472fab7b7e38f4ede1f/butterknife-annotations-8.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="345b89f45d02d8b09400b472fab7b7e38f4ede1f">
-        <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/pre-dexed/release/butterknife-annotations-8.0.1_63fb966b765b8c71490e9aa6f06b22b62800f26b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/pre-dexed/release/internal_impl-23.4.0_ccb9231e9b15313fe3b953fc60e1a14f54bb6e8a.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="21.1.2"
-        sha1="1e06ee55b6d9004e101328194fb9ae0d52810afc">
+        sha1="8857a413bc6b0b02b116cc934ff3d1dc2547c150">
         <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_72d8625b26e795e9a82c892da206da8d2a2880d3/classes.dex" />
     </item>
     <item
@@ -128,15 +74,6 @@
         <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-21.0.3_88db13505beef78e80b284f4818cf0caca643c60/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/Users/joonheepak/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/pre-dexed/release/picasso-2.5.2_650e340c03612a00ff5ba79962a41177063efbc9.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="/Users/joonheepak/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
         jumboMode="true"
@@ -146,39 +83,12 @@
         <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_650e340c03612a00ff5ba79962a41177063efbc9/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/pre-dexed/release/com.android.support-appcompat-v7-21.0.3_88db13505beef78e80b284f4818cf0caca643c60.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/joonheepak/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.8.0/5ea7af56cc7c567ed9856d99efb30740e9b17ff/okio-1.8.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
-        <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/pre-dexed/release/okio-1.8.0_0ddc60cdd3cadf316bc21d666fd9e2b7d55bb65f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/joonheepak/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/2de7cd8b95b7021b1d597f049bcb422055119f2c/retrofit-2.1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
-        <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/pre-dexed/release/retrofit-2.1.0_e6f2cdf6d41fe2de649e4c29cdd40a68af5e81a6.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="21.1.2"
-        sha1="36ef8cfe9a2b48575b2ed69da1243adf488c7693">
+        sha1="d0d61807d9f1e96b6099477e642ff1cef3be3108">
         <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_9e5af422d60c128610e612ba4d97e57c0027fd40/classes.dex" />
     </item>
     <item
@@ -209,15 +119,6 @@
         <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_a12a58e60202c69d81c9a0c51e787f1734022445/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/usr/local/Cellar/android-sdk/24.4.1_1/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/pre-dexed/release/support-annotations-23.4.0_a12a58e60202c69d81c9a0c51e787f1734022445.jar" />
-    </item>
-    <item
         is-multidex="true"
         jar="/Users/joonheepak/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/2de7cd8b95b7021b1d597f049bcb422055119f2c/retrofit-2.1.0.jar"
         jumboMode="true"
@@ -234,24 +135,6 @@
         revision="21.1.2"
         sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
         <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.3.0_11b861e0bb9f28ca1c2821c1a70da1ba0771d48c/classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/joonheepak/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.3.0/2b802460eea20f8f2ad9c08c74e0f14718e88aa9/okhttp-3.3.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
-        <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/pre-dexed/release/okhttp-3.3.0_11b861e0bb9f28ca1c2821c1a70da1ba0771d48c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.3/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="21.1.2"
-        sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
-        <dex dex="/Users/joonheepak/Desktop/TopMovies/app/build/intermediates/pre-dexed/release/com.android.support-recyclerview-v7-21.0.3_afc6ba3706cfbaad6bdffea5f88492de075f4b4b.jar" />
     </item>
 
 </items>
