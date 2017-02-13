@@ -6,6 +6,9 @@ movies to a list.
 
 All of the movie details and content were provided by http://themoviedb.org
 
+
+![alt text](http://i1378.photobucket.com/albums/ah112/pakjoonhee90/motpicfeature_zps3otv3no6.png)
+
 ![alt text](http://i1320.photobucket.com/albums/u528/pakjoonhee/Movies1_resize_zpsrcfau1va.png)
 
 
