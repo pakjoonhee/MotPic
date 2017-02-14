@@ -1,4 +1,4 @@
-package com.joonhee_pak.motpic;
+package com.joonhee_pak.stricfilm;
 
 
 import android.content.Intent;
@@ -15,9 +15,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.joonhee_pak.motpic.data.MoviesResponse;
-import com.joonhee_pak.motpic.utility.ApiClient;
-import com.joonhee_pak.motpic.utility.ApiInterface;
+import com.joonhee_pak.stricfilm.data.MoviesResponse;
+import com.joonhee_pak.stricfilm.utility.ApiClient;
+import com.joonhee_pak.stricfilm.utility.ApiInterface;
 
 
 import java.util.ArrayList;

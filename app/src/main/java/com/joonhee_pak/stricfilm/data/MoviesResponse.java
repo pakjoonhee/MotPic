@@ -1,7 +1,7 @@
-package com.joonhee_pak.motpic.data;
+package com.joonhee_pak.stricfilm.data;
 
 import com.google.gson.annotations.SerializedName;
-import com.joonhee_pak.motpic.Movies;
+import com.joonhee_pak.stricfilm.Movies;
 
 import java.util.List;
 

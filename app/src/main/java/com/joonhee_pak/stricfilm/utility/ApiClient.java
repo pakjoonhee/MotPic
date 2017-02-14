@@ -1,4 +1,4 @@
-package com.joonhee_pak.motpic.utility;
+package com.joonhee_pak.stricfilm.utility;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

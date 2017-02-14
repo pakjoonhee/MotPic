@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.joonhee_pak.motpic">
+    package="com.joonhee_pak.stricfilm">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.joonhee_pak.motpic.MainActivity"
+            android:name="com.joonhee_pak.stricfilm.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,12 +19,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.joonhee_pak.motpic.DetailsActivity"
+            android:name="com.joonhee_pak.stricfilm.DetailsActivity"
             android:theme="@style/Transparent" />
         <activity
-            android:name="com.joonhee_pak.motpic.FavoriteList" />
+            android:name="com.joonhee_pak.stricfilm.FavoriteList" />
         <activity
-            android:name="com.joonhee_pak.motpic.ReviewsList" />
+            android:name="com.joonhee_pak.stricfilm.ReviewsList" />
     </application>
 
 </manifest>

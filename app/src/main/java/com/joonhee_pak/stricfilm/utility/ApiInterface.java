@@ -1,6 +1,6 @@
-package com.joonhee_pak.motpic.utility;
+package com.joonhee_pak.stricfilm.utility;
 
-import com.joonhee_pak.motpic.data.MoviesResponse;
+import com.joonhee_pak.stricfilm.data.MoviesResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

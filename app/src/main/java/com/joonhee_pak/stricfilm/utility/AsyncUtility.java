@@ -1,4 +1,4 @@
-package com.joonhee_pak.motpic.utility;
+package com.joonhee_pak.stricfilm.utility;
 
 import java.io.BufferedReader;
 import java.io.IOException;

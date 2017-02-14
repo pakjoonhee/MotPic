@@ -1,4 +1,4 @@
-package com.joonhee_pak.motpic;
+package com.joonhee_pak.stricfilm;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;

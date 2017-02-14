@@ -1,4 +1,4 @@
-package com.joonhee_pak.motpic;
+package com.joonhee_pak.stricfilm;
 
 import android.app.Activity;
 import android.content.Intent;
