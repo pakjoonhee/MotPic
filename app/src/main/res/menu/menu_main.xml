@@ -14,10 +14,10 @@
         android:title="@string/highest_rated"
         app:showAsAction="never" />
 
-    <item
-        android:id="@+id/favorites"
-        android:orderInCategory="2"
-        android:title="Favorites"
-        app:showAsAction="never" />
+    <!--<item-->
+        <!--android:id="@+id/favorites"-->
+        <!--android:orderInCategory="2"-->
+        <!--android:title="Favorites"-->
+        <!--app:showAsAction="never" />-->
 
 </menu>

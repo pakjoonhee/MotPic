@@ -67,23 +67,23 @@
             android:paddingLeft="75dp"
             android:paddingTop="15dp"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Add to Favorites"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:background="@color/teal"
-            android:id="@+id/buttonFavorite"
-            android:layout_below="@+id/movieRating"
-            android:layout_toRightOf="@+id/grid_item_image"
-            android:paddingTop="10dp"
-            android:paddingBottom="@dimen/padding_bottom_textview"
-            android:paddingRight="20dp"
-            android:paddingLeft="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"/>
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+            <!--android:text="Add to Favorites"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textStyle="bold"-->
+            <!--android:background="@color/teal"-->
+            <!--android:id="@+id/buttonFavorite"-->
+            <!--android:layout_below="@+id/movieRating"-->
+            <!--android:layout_toRightOf="@+id/grid_item_image"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:paddingBottom="@dimen/padding_bottom_textview"-->
+            <!--android:paddingRight="20dp"-->
+            <!--android:paddingLeft="20dp"-->
+            <!--android:layout_marginLeft="30dp"-->
+            <!--android:layout_marginTop="20dp"/>-->
 
         <TextView
             android:layout_width="wrap_content"

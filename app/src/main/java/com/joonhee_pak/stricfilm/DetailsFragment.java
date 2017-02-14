@@ -46,7 +46,7 @@ public class DetailsFragment extends Fragment {
     @BindView(R.id.grid_item_image) ImageView imageView;
     @BindView(R.id.button) Button buttonTrailerOne;
     @BindView(R.id.button2) Button buttonTrailerTwo;
-    @BindView(R.id.buttonFavorite) Button buttonFavorite;
+//    @BindView(R.id.buttonFavorite) Button buttonFavorite;
     @BindView(R.id.trailers) TextView trailers;
     @BindView(R.id.summary) TextView summary;
     @BindView(R.id.button3) Button buttonReviews;
@@ -102,7 +102,7 @@ public class DetailsFragment extends Fragment {
             titleTextView.setVisibility(View.INVISIBLE);
             buttonTrailerOne.setVisibility(View.INVISIBLE);;
             buttonTrailerTwo.setVisibility(View.INVISIBLE);
-            buttonFavorite.setVisibility(View.INVISIBLE);
+//            buttonFavorite.setVisibility(View.INVISIBLE);
             trailers.setVisibility(View.INVISIBLE);
             summary.setVisibility(View.INVISIBLE);
             buttonReviews.setVisibility(View.INVISIBLE);
@@ -147,17 +147,17 @@ public class DetailsFragment extends Fragment {
             }
         });
 
-        buttonFavorite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                SharedPreferences settings = getActivity().getSharedPreferences("favoritesArray", getActivity().MODE_PRIVATE);
-                SharedPreferences.Editor editor = settings.edit();
-                String longString = settings.getString("longString", "").concat("|" + title.concat("|" + image));
-                editor.putString("longString", longString);
-                editor.apply();
-            }
-        });
+//        buttonFavorite.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                SharedPreferences settings = getActivity().getSharedPreferences("favoritesArray", getActivity().MODE_PRIVATE);
+//                SharedPreferences.Editor editor = settings.edit();
+//                String longString = settings.getString("longString", "").concat("|" + title.concat("|" + image));
+//                editor.putString("longString", longString);
+//                editor.apply();
+//            }
+//        });
 
         buttonReviews.setOnClickListener(new View.OnClickListener() {
             @Override

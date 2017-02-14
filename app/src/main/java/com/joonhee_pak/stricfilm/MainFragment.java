@@ -181,10 +181,10 @@ public class MainFragment extends Fragment {
 
                 break;
 
-            case R.id.favorites:
-                Intent intent = new Intent(getActivity(), FavoriteList.class);
-                this.startActivity(intent);
-                break;
+//            case R.id.favorites:
+//                Intent intent = new Intent(getActivity(), FavoriteList.class);
+//                this.startActivity(intent);
+//                break;
         }
         return true;
     }
